@@ -1,0 +1,28 @@
+"worldborder"{
+    "center"{
+        n{
+            n;
+        }
+    },
+    "set"{
+        *{
+            *;
+        }
+    },
+    "add"{
+        n{
+            ?n;
+        }
+    },
+    "warning"{
+        "time"|"distance"{
+            n;
+        }
+    },
+    "damage"{
+        "buffer"|"amount"{
+            n;
+        }
+    },
+    "get";
+}

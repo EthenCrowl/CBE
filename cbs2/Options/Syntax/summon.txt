@@ -1,0 +1,15 @@
+"summon"{
+    "Item"|"XPOrb"|"AreaEffectCloud"|"ThrownEgg"|"Arrow"|"Snowball"|"Fireball"|"SmallFireball"|"ThrownEnderpearl"|"EyeOfEnderSignal"|"ThrownPotion"|"ThrownExpBottle"
+    |"WitherSkull"|"FireworksRocketEntity"|"SpectralArrow"|"ShulkerBullet"|"DragonFireball"|"LeashKnot"|"Painting"|"ItemFrame"|"ArmorStand"|"PrimedTnt"|"FallingSand"
+    |"MinecartCommandBlock"|"Boat"|"MinecartRideable"|"MinecartChest"|"MinecartFurnace"|"MinecartTNT"|"MinecartHopper"|"MinecartSpawner"|"Creeper"|"Skeleton"|"Spider"
+    |"Giant"|"Zombie"|"Slime"|"Ghast"|"PigZombie"|"Enderman"|"CaveSpider"|"LavaSlime"|"EnderDragon"|"WitherBoss"|"Bat"|"Witch"|"Endermite"|"Guardian"|"Shulker"
+    |"Pig"|"Sheep"|"Cow"|"Chicken"|"Squid"|"Wolf"|"MushroomCow"|"SnowMan"|"Ozelot"|"VillagerGolem"|"EntityHorse"|"Rabbit"|"PolarBear"|"Villager"|"EnderCrystal"|"LightningBolt"{
+        ?c{
+            ?c{
+                ?c{
+                    ?NBT;
+                }
+            }
+        }
+    }
+}

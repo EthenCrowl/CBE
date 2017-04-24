@@ -1,0 +1,11 @@
+"spreadplayers"{
+    n{
+        n{
+            n{
+                "false"|"true"{
+                    ~;
+                }
+            }
+        }
+    }
+}

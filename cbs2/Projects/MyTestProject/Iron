@@ -1,0 +1,85 @@
+init:{
+
+	#scoreboard objectives add mineCoal stat.mineBlock.minecraft.coal_ore
+	#scoreboard objectives add mineIron stat.mineBlock.minecraft.iron_ore
+	#scoreboard objectives add sneak stat.sneakTime
+	#scoreboard objectives add isOre dummy
+	#scoreboard objectives add exist dummy
+	#scoreboard objectives add delete dummy
+#scoreboard objectives add delete dummy
+#scoreboard objectives add delete dummy
+#scoreboard objectives add delete dummy
+#scoreboard objectives add delete dummy
+#scoreboard objectives add delete dummy
+#scoreboard objectives add delete dummy
+#scoreboard objectives add delete dummy
+#scoreboard objectives add delete dummy
+#scoreboard objectives add delete dummy
+#scoreboard objectives add delete dummy
+#scoreboard objectives add delete dummy
+#scoreboard objectives add delete dummy
+#scoreboard objectives add delete dummy
+#scoreboard objectives add delete dummy
+#scoreboard objectives add delete dummy
+
+#scoreboard objectives add delete dummy
+#scoreboard objectives add delete dummy
+#scoreboard objectives add delete dummy
+#scoreboard objectives add delete dummy
+#scoreboard objectives add delete dummy
+#scoreboard objectives add delete dummy
+#scoreboard objectives add delete dummy
+
+}
+func mineUp(oreOne, oreTwo, mine, drop, name){
+
+	//setup scores
+	#execute @a[score_%mine%_min=1,score_sneak_min=1] ~ ~ ~ execute @e[type=Item] ~ ~ ~ detect ~ ~1 ~ %oreOne% 0 scoreboard players set @e[dy=0,type=Item] isOre 1 {Item:{id:"%drop%"}}
+	#execute @a[score_%mine%_min=1,score_sneak_min=1] ~ ~ ~ execute @e[type=Item] ~ ~ ~ detect ~1 ~ ~ %oreOne% 0 scoreboard players set @e[dy=0,type=Item] isOre 1 {Item:{id:"%drop%"}}
+	#execute @a[score_%mine%_min=1,score_sneak_min=1] ~ ~ ~ execute @e[type=Item] ~ ~ ~ detect ~-1 ~ ~ %oreOne% 0 scoreboard players set @e[dy=0,type=Item] isOre 1 {Item:{id:"%drop%"}}
+	#execute @a[score_%mine%_min=1,score_sneak_min=1] ~ ~ ~ execute @e[type=Item] ~ ~ ~ detect ~ ~ ~1 %oreOne% 0 scoreboard players set @e[dy=0,type=Item] isOre 1 {Item:{id:"%drop%"}}
+	#execute @a[score_%mine%_min=1,score_sneak_min=1] ~ ~ ~ execute @e[type=Item] ~ ~ ~ detect ~ ~ ~-1 %oreOne% 0 scoreboard players set @e[dy=0,type=Item] isOre 1 {Item:{id:"%drop%"}}
+	#execute @a[score_%mine%_min=1,score_sneak_min=1] ~ ~ ~ execute @e[type=Item] ~ ~ ~ detect ~ ~-1 ~ %oreOne% 0 scoreboard players set @e[dy=0,type=Item] isOre 1 {Item:{id:"%drop%"}}
+
+	//spawn ArmorStands
+	#execute @e[score_isOre_min=1] ~ ~ ~ detect ~ ~1 ~ %oreOne% 0 summon ArmorStand ~ ~1 ~ {CustomName:"%name%",NoGravity:1,Invisible:1}
+	#execute @e[score_isOre_min=1] ~ ~ ~ detect ~1 ~ ~ %oreOne% 0 summon ArmorStand ~1 ~ ~ {CustomName:"%name%",NoGravity:1,Invisible:1}
+	#execute @e[score_isOre_min=1] ~ ~ ~ detect ~-1 ~ ~ %oreOne% 0 summon ArmorStand ~-1 ~ ~ {CustomName:"%name%",NoGravity:1,Invisible:1}
+	#execute @e[score_isOre_min=1] ~ ~ ~ detect ~ ~ ~1 %oreOne% 0 summon ArmorStand ~ ~ ~1 {CustomName:"%name%",NoGravity:1,Invisible:1}
+	#execute @e[score_isOre_min=1] ~ ~ ~ detect ~ ~ ~-1 %oreOne% 0 summon ArmorStand ~ ~ ~-1 {CustomName:"%name%",NoGravity:1,Invisible:1}
+	#execute @e[score_isOre_min=1] ~ ~ ~ detect ~ ~-1 ~ %oreOne% 0 summon ArmorStand ~ ~-1 ~ {CustomName:"%name%",NoGravity:1,Invisible:1}
+	#scoreboard players add @e[name=%name%] exist 1
+	
+	#execute @e[name=%name%] ~ ~1 ~ execute @e[name=%name%,dy=0] ~ ~-1 ~ execute @e[name=%name%,dy=0] ~ ~ ~ scoreboard players tag @e[dy=0,name=%name%] add Up
+	#execute @e[name=%name%] ~ ~-1 ~ execute @e[name=%name%,dy=0] ~ ~1 ~ execute @e[name=%name%,dy=0] ~ ~ ~ scoreboard players tag @e[dy=0,name=%name%] add Down	
+	#execute @e[name=%name%] ~1 ~ ~ execute @e[name=%name%,dy=0] ~-1 ~ ~ execute @e[name=%name%,dy=0] ~ ~ ~ scoreboard players tag @e[dy=0,name=%name%] add Left
+	#execute @e[name=%name%] ~-1 ~ ~ execute @e[name=%name%,dy=0] ~1 ~ ~ execute @e[name=%name%,dy=0] ~ ~ ~ scoreboard players tag @e[dy=0,name=%name%] add Right
+	#execute @e[name=%name%] ~ ~ ~1 execute @e[name=%name%,dy=0] ~ ~ ~-1 execute @e[name=%name%,dy=0] ~ ~ ~ scoreboard players tag @e[dy=0,name=%name%] add Forward
+	#execute @e[name=%name%] ~ ~ ~-1 execute @e[name=%name%,dy=0] ~ ~ ~1 execute @e[name=%name%,dy=0] ~ ~ ~ scoreboard players tag @e[dy=0,name=%name%] add Backward
+
+	//spawn 2 ArmorStands
+	#execute @e[name=%name%,tag=!Up,score_exist_min=1] ~ ~ ~ detect ~ ~1 ~ %oreOne% 0 summon ArmorStand ~ ~1 ~ {CustomName:"%name%",NoGravity:1,Invisible:1}
+	#execute @e[name=%name%,tag=!Left,score_exist_min=1] ~ ~ ~ detect ~1 ~ ~ %oreOne% 0 summon ArmorStand ~1 ~ ~ {CustomName:"%name%",NoGravity:1,Invisible:1}
+	#execute @e[name=%name%,tag=!Right,score_exist_min=1] ~ ~ ~ detect ~-1 ~ ~ %oreOne% 0 summon ArmorStand ~-1 ~ ~ {CustomName:"%name%",NoGravity:1,Invisible:1}
+	#execute @e[name=%name%,tag=!Forward,score_exist_min=1] ~ ~ ~ detect ~ ~ ~1 %oreOne% 0 summon ArmorStand ~ ~ ~1 {CustomName:"%name%",NoGravity:1,Invisible:1}
+	#execute @e[name=%name%,tag=!Backward,score_exist_min=1] ~ ~ ~ detect ~ ~ ~-1 %oreOne% 0 summon ArmorStand ~ ~ ~-1 {CustomName:"%name%",NoGravity:1,Invisible:1}
+	#execute @e[name=%name%,tag=!Down,score_exist_min=1] ~ ~ ~ detect ~ ~-1 ~ %oreOne% 0 summon ArmorStand ~ ~-1 ~ {CustomName:"%name%",NoGravity:1,Invisible:1}
+		
+	//replace
+	#execute @e[name=%name%,score_exist_min=1] ~ ~ ~ detect ~ ~ ~ %oreOne% 0 setblock ~ ~ ~ %oreTwo% 0 destroy
+
+	-d #execute @e[name=%name%,score_exist_min=1] ~ ~ ~ scoreboard players set @e[type=Item] delete 1 {Item:{id:"%drop%"}}
+	//reset and kil
+	#kill @e[score_delete_min=1]
+	#scoreboard players set @a %mine% 0
+	#kill @e[name=%name%,score_exist_min=1]
+
+}
+execute:#
+{
+	//call
+	mineUp(minecraft:coal_ore, minecraft:iron_ore, mineCoal, minecraft:coal, Coal)
+	#scoreboard players set @a sneak 0
+	mineUp(minecraft:iron_ore, minecraft:gold_ore, mineIron, minecraft:iron_ore, Iron)	
+}
+

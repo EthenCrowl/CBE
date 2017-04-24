@@ -1,0 +1,6 @@
+"gamerule"{
+    "commandBlockOutput"|"disableElytraMovementCheck"|"doDaylightCycle"|"doEntityDrops"|"doFireTick"|"doMobLoot"|"doMobSpawning"|"doTileDrops"|"keepInventory"|"logAdminCommands"
+    |"mobGriefing"|"naturalRegeneration"|"randomTickSpeed"|"reducedDebugInfo"|"sendCommandFeedback"|"showDeathMessages"{
+        ?"true"|"false";
+    }
+}

@@ -1,0 +1,16 @@
+"title"{
+    "time"{
+        n{
+            n{
+                n;
+            }
+        }
+    },
+    "title"{
+        +;
+    },
+    "subtitile"{
+        +;
+    },
+    "clear"|"reset";
+}

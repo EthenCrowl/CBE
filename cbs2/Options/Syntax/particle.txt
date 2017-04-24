@@ -1,0 +1,33 @@
+"particle"{
+    "angryVillager"| "barrier"|"blockcrack"|"blockdust"|"bubble"|"cloud"|"crit"|"damageIndicator"|"depthsuspend"|"dragonbreath"|"dripLava"
+    |"dripWater"|"droplet"|"enchantmenttable"|"endRod"|"explode"|"fireworkSpark"|"flame"|"footstep"|"happyVillager"|"heart"|"hugeexplosion"
+    |"iconcrack"|"instantSpell"|"largeexplosion"|"largesmoke"|"lava"|"magicCrit"|"mobappearance"|"mobSpell"|"mobSpellAmbient"|"note"|"portal"
+    |"reddust"|"slime"|"smoke"|"snowballpoof"|"snowshovel"|"spell"|"splash"|"suspended"|"sweepAttack"|"take"|"townaura"|"wake"|"witchMagic"{
+       c{
+            c{
+                c{
+                    n{
+                        n{
+                            n{
+                                n{
+                                    ?n{
+                                        ?"normal"{
+                                            ?~{
+                                                ?n;
+                                            }
+                                        },
+                                        ?"force"{
+                                           ?~{
+                                                ?n;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,4 @@
+execute:#
+{
+	-S ae @p[r=10] testfor #testfor @e
+}
